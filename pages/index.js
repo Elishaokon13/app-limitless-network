@@ -10,7 +10,7 @@ import {
   UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { BridgesApp } from '@brgx/widget';
+// import { BridgesApp } from '@brgx/widget';
 
 const navigation = [
   { name: 'Swap', href: '/swap', icon: HomeIcon, current: true },
@@ -25,7 +25,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
@@ -189,14 +189,14 @@ export default function Example() {
           </div>
           <main className="flex-1">
             <div className="py-6">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+              {/* <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
                 <h1 className="text-4xl font-semibold text-white">Swap</h1>
               </div>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
                 <div className="mt-20 text-center justify-center">
                   <BridgesApp />
                 </div>
-              </div>
+              </div> */}
             </div>
           </main>
         </div>
