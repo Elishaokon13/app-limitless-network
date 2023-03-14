@@ -103,7 +103,7 @@ export default function Example() {
                       ))}
                     </nav>
                   </div>
-                  <div className="flex flex-shrink-0 border-t border-indigo-800 p-4">
+                  {/* <div className="flex flex-shrink-0 border-t border-indigo-800 p-4">
                     <a href="#" className="group block flex-shrink-0">
                       <div className="flex items-center">
                         <div>
@@ -119,7 +119,7 @@ export default function Example() {
                         </div>
                       </div>
                     </a>
-                  </div>
+                  </div> */}
                 </Dialog.Panel>
               </Transition.Child>
               <div className="w-14 flex-shrink-0" aria-hidden="true">
@@ -157,7 +157,7 @@ export default function Example() {
                 ))}
               </nav>
             </div>
-            <div className="flex flex-shrink-0 border-t border-indigo-800 p-4">
+            {/* <div className="flex flex-shrink-0 border-t border-indigo-800 p-4">
               <a href="#" className="group block w-full flex-shrink-0">
                 <div className="flex items-center">
                   <div>
@@ -173,7 +173,7 @@ export default function Example() {
                   </div>
                 </div>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="flex flex-1 flex-col md:pl-64">
@@ -193,7 +193,7 @@ export default function Example() {
                 <h1 className="text-2xl font-semibold text-gray-900">Swap</h1>
               </div>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                <div className="mt-20 ml-20 text-center justify-center">
+                <div className="mt-20 text-center justify-center">
                   <BridgesApp />
                 </div>
               </div>
