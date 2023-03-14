@@ -13,7 +13,7 @@ import {
 import { BridgesApp } from '@brgx/widget';
 
 const navigation = [
-  { name: 'Swap', href: '/swap', icon: HomeIcon, current: true },
+  { name: 'Swap', href: '#', icon: HomeIcon, current: true },
   { name: 'Staking Pool', href: '/staking-pool', icon: UsersIcon, current: false },
   { name: 'Liquidity', href: '#', icon: FolderIcon, current: false },
   // { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
