@@ -10,6 +10,7 @@ import {
   UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
+import { BridgesApp } from '@brgx/widget';
 
 const navigation = [
   { name: 'Swap', href: '/swap', icon: HomeIcon, current: true },
@@ -29,7 +30,7 @@ export default function Example() {
 
   return (
     <>
-      
+
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog as="div" className="relative z-40 md:hidden" onClose={setSidebarOpen}>
@@ -192,7 +193,9 @@ export default function Example() {
                 <h1 className="text-2xl font-semibold text-gray-900">Swap</h1>
               </div>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                
+                <div className="mt-20 ml-20 text-center justify-center">
+                  <BridgesApp />
+                </div>
               </div>
             </div>
           </main>
