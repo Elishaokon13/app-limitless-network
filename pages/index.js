@@ -1,20 +1,63 @@
-import { ConnectWallet } from "@thirdweb-dev/react";
+import { useEffect, useState } from 'react';
+import Navbar from './components/Navbar';
 import Image from "next/image";
 
 export default function Home() {
+  const [totalSupply, setTotalSupply] = useState(null);
+  const [liquidity, setLiquidity] = useState(null);
+
+  useEffect(() => {
+    const fetchTotalSupply = async () => {
+      try {
+        const response = await fetch('https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0x593649f70f836565e33f0bce9af9503c243359b3&apikey=YOUR_API_KEY');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+        setTotalSupply(data.result);
+      } catch (error) {
+        console.error('Error fetching total supply:', error);
+      }
+    };
+
+    // Example data for liquidity
+    const liquidityData = "5000";
+
+    setLiquidity(liquidityData);
+    fetchTotalSupply();
+  }, []);
+
   return (
+   <>
+    <Navbar />
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+       
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          <ConnectWallet />
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <div className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0">
-            By{' '}
-            <Image src="/vercel.svg" alt="Vercel Logo" className="dark:invert" width={100} height={24} priority />
-          </div>            
+
+        <div className='grid lg:grid-cols-2 gap-3 w-full text-white'>
+          <div className='rounded-lg bg-[#152a3b] px-6 p-3 border-dashed flex flex-col gap-3 justify-center items-start h-[150px]'>
+            <div className=' flex items-center justify-between w-full'>
+              <p className='text-xl'>Total supply</p>
+              <p className='text-2xl'>{totalSupply !== null ? totalSupply : 'Loading...'}B</p>
+            </div>
+            <p className='text-sm text-[#14c2a3]'>BSC</p>
+          </div>
+
+          <div className='rounded-lg bg-[#152a3b] px-6 p-3 border-dashed flex flex-col gap-3 justify-center items-start h-[150px]'>
+            <div className=' flex items-center justify-between w-full'>
+              <p className='text-xl'>Bridge liquidity</p>
+              {liquidity !== null ? (
+                <p className='text-2xl'>${liquidity}</p>
+              ) : (
+                <p className='text-2xl'>Loading...</p>
+              )}
+            </div>
+            <p className='text-sm text-[#14c2a3]'>Locked supply</p>
+          </div>
         </div>
+
       </div>
-    </main>  
-    );
+    </main>
+    </>
+  );
 }
