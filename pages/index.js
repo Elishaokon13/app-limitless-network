@@ -65,7 +65,7 @@ export default function Home() {
   useEffect(() => {
     const fetchTotalSupply = async () => {
       try {
-        const response = await fetch('https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0x593649f70f836565e33f0bce9af9503c243359b3&apikey=YOUR_API_KEY');
+        const response = await fetch('https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0x593649f70f836565e33f0bce9af9503c243359b3&apikey=RK9BKPUGPM4MIXZBXK4QWTYCW3YRN3WGKF');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
