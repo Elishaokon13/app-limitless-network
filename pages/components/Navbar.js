@@ -9,6 +9,7 @@ import {
     SquaresPlusIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
+import Logo from "../../public/Logo.png"
 import Image from "next/image"
 import Link from 'next/link'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
@@ -39,7 +40,7 @@ export default function Example() {
                 <div className="flex lg:flex-1">
                     <Link href="#" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
-                        <Image className="h-8 w-auto" src="https://www.limitlessnetwork.org/_next/static/media/Logo.3a89c1e7.png?imwidth=3840" alt="" />
+                        <Image className="h-8 w-auto" src={Logo} alt="" /> <span className="text-white">Limitless Network</span>
                     </Link>
                 </div>
                 <div className="flex lg:hidden">
@@ -53,10 +54,10 @@ export default function Example() {
                     </button>
                 </div>
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
-                    <Link href="/" className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link href="/" className="text-sm font-semibold leading-6 text-white">
                         Home
                     </Link>
-                    <Link href="/swap" className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link href="/swap" className="text-sm font-semibold leading-6 text-white">
                         Swap
                     </Link>
                 </Popover.Group>
@@ -72,9 +73,9 @@ export default function Example() {
                             <span className="sr-only">Your Company</span>
                             <Image
                                 className="h-8 w-auto"
-                                src="https://www.limitlessnetwork.org/_next/static/media/Logo.3a89c1e7.png?imwidth=3840"
+                                src={Logo}
                                 alt=""
-                            />
+                            /> Limitless Network
                         </Link>
                         <button
                             type="button"
@@ -91,13 +92,13 @@ export default function Example() {
 
                                 <Link
                                     href="/"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-xl font-semibold leading-7 text-white hover:bg-gray-50"
                                 >
                                     Home
                                 </Link>
                                 <Link
                                     href="/swap"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-xl font-semibold leading-7 text-white hover:bg-gray-50"
                                 >
                                     Swap
                                 </Link>

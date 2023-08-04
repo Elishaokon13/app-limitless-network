@@ -90,7 +90,7 @@ export default function Home() {
       <div className='bg-black lg:w-3/4 xl:w-2/3 mx-auto px-4 py-8 flex flex-col gap-8'>
         {/* our supply */}
         <div className='flex flex-col gap-3 items-start  w-full '>
-          <p >Our supply</p>
+          <p className='text-xl'>Token Details</p>
           <div className='grid lg:grid-cols-2 gap-3 w-full text-white'>
             <div className='rounded-lg bg-[#152a3b] px-6 p-3 border-dashed flex flex-col gap-3 justify-center items-start h-[150px]'>
               <div className=' flex items-center justify-between w-full'>
@@ -114,10 +114,10 @@ export default function Home() {
         </div>
         {/* our token */}
         <div className='flex flex-col gap-2 items-start  w-full '>
-          <p >Our supply</p>
+          <p className='text-xl'>Your Claim Details</p>
           <div className='grid lg:grid-cols-3 gap-3 w-full text-white'>
             <div className='rounded-lg bg-[#152a3b]  border-dashed flex flex-col gap-3 items-center justify-center h-[200px]'>
-              <p className='text-xl'>Claim Rewards(48hours)</p>
+              <p className='text-xl'>Claim Rewards</p>
 
               {showClaimButton && (
                 <Claim />
