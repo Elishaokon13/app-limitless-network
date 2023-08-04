@@ -86,7 +86,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className='bg-black w-{150px} lg:pr-16 flex flex-col gap-8'>
+      <div className='bg-black lg:w-3/4 xl:w-2/3 mx-auto px-4 py-8 flex flex-col gap-8'>
         {/* our supply */}
         <div className='flex flex-col gap-3 items-start  w-full '>
           <p >Our supply</p>
