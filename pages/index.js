@@ -72,17 +72,17 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await fetch('https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0x593649f70f836565e33f0bce9af9503c243359b3&apikey=RK9BKPUGPM4MIXZBXK4QWTYCW3YRN3WGKF');
-        const data = await response.json();
-        const totalSupplyValue = data.result && !isNaN(data.result) ? Number(data.result) : 0;
-        setTotalSupply(formatNumber(totalSupplyValue));
-      } catch (error) {
-        console.error('Error fetching coin data:', error);
-      }
+        try {
+            const response = await fetch('https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0xC13CbF50370E5EaE6f5Dd9D8a1015007f34C4eaD&apikey=RK9BKPUGPM4MIXZBXK4QWTYCW3YRN3WGKF');
+            const data = await response.json();
+            const totalSupplyValue = data.result && !isNaN(data.result) ? Number(data.result) : 0;
+            setTotalSupply(formatNumber(totalSupplyValue));
+        } catch (error) {
+            console.error('Error fetching coin data:', error);
+        }
     };
     fetchData();
-  }, []);
+}, []);
 
   return (
     <>
