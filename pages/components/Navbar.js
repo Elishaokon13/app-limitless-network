@@ -12,17 +12,17 @@ import {
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import { ConnectWallet } from "@thirdweb-dev/react";
 
-const products = [
-    { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-    { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-    { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-    { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
-const callsToAction = [
-    { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-    { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
+// const products = [
+//     { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
+//     { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
+//     { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
+//     { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
+//     { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+// ]
+// const callsToAction = [
+//     { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
+//     { name: 'Contact sales', href: '#', icon: PhoneIcon },
+// ]
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -32,7 +32,7 @@ export default function Example() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="bg-white">
+        <header className="bg-black">
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
@@ -52,10 +52,6 @@ export default function Example() {
                 </div>
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
                     <Popover className="relative">
-                        <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-                            Product
-                            <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-                        </Popover.Button>
 
                         <Transition
                             as={Fragment}
@@ -86,30 +82,16 @@ export default function Example() {
                                         </div>
                                     ))}
                                 </div>
-                                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                                    {callsToAction.map((item) => (
-                                        <a
-                                            key={item.name}
-                                            href={item.href}
-                                            className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                                        >
-                                            <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-                                            {item.name}
-                                        </a>
-                                    ))}
-                                </div>
+
                             </Popover.Panel>
                         </Transition>
                     </Popover>
 
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Features
+                    <a href="/" className="text-sm font-semibold leading-6 text-gray-900">
+                        Home
                     </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Marketplace
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Company
+                    <a href="/swap" className="text-sm font-semibold leading-6 text-gray-900">
+                        Swap
                     </a>
                 </Popover.Group>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
