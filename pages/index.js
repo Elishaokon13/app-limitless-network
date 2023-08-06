@@ -28,19 +28,7 @@ export default function Home() {
   }, []);
 
   // Format time to display in the format "HH:mm:ss"
-  const formatTime = (time) => {
-    const hours = Math.floor(time / 3600);
-    const minutes = Math.floor((time % 3600) / 60);
-    const seconds = Math.floor(time % 60);
-
-    const formattedHours = String(hours).padStart(2, '0');
-    const formattedMinutes = String(minutes).padStart(2, '0');
-    const formattedSeconds = String(seconds).padStart(2, '0');
-
-    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
-  };
-
-  const formatNumber = (num) => {
+   const formatNumber = (num) => {
     const tier = Math.log10(num) / 3 | 0;
     if (tier === 0) return num.toFixed(0);
     const scale = Math.pow(10, tier * 3);
@@ -89,7 +77,7 @@ export default function Home() {
               <BalanceOf />
             </div> */}
             <div className='rounded-lg bg-[#152a3b]  border-dashed flex flex-col gap-3 items-center justify-center h-[200px]'>
-              <p className='text-xl'>Next Payout</p>
+              <p className='text-xl'>Balance</p>
               <div>{BalanceOf}</div>
             </div>
             {/* <div className='rounded-lg bg-[#152a3b]  border-dashed flex flex-col gap-3 items-center justify-center h-[200px]'>
