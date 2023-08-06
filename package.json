@@ -16,12 +16,14 @@
     "@poodl/widget": "^1.1.2",
     "@thirdweb-dev/react": "^3",
     "@thirdweb-dev/sdk": "^3",
+    "dotenv": "^16.3.1",
     "ethers": "^5",
-    "next": "^13",
+    "next": "^13.4.12",
     "next-transpile-modules": "^10.0.1",
     "react": "^18.2",
     "react-dom": "^18.2",
-    "sharp": "^0.32.4"
+    "sharp": "^0.32.4",
+    "web3": "^4.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
