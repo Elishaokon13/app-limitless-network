@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Image from "next/image";
+import BalanceOf from './components/Withdrawable';
 import Claim from './components/Claim';
+
 // Placeholder components, you should replace these with actual implementations
 // const Claim = () => <p>Claim component</p>;
 // const BalanceOf = () => <p>BalanceOf component</p>;
@@ -10,44 +12,20 @@ import Claim from './components/Claim';
 
 export default function Home() {
   const [totalSupply, setTotalSupply] = useState(null);
-  const [liquidity, setLiquidity] = useState(null);
-  const [showClaimButton, setShowClaimButton] = useState(false);
-  const [timeRemaining, setTimeRemaining] = useState(0);
 
   useEffect(() => {
-    let countdownInterval;
-
-    const startCountdown = () => {
-      const countdownTime = 3 * 7 * 24 * 60 * 60; // 3 weeks in seconds
-      setTimeRemaining(countdownTime);
-
-      countdownInterval = setInterval(() => {
-        setTimeRemaining((prevTime) => prevTime - 1);
-      }, 1000);
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0xC13CbF50370E5EaE6f5Dd9D8a1015007f34C4eaD&apikey=RK9BKPUGPM4MIXZBXK4QWTYCW3YRN3WGKF');
+        const data = await response.json();
+        const totalSupplyValue = data.result && !isNaN(data.result) ? Number(data.result) : 0;
+        setTotalSupply(formatNumber(totalSupplyValue));
+      } catch (error) {
+        console.error('Error fetching coin data:', error);
+      }
     };
-
-    const handleRestartCountdown = () => {
-      clearInterval(countdownInterval);
-      setShowClaimButton(false);
-      startCountdown();
-    };
-
-    startCountdown();
-
-    return () => {
-      clearInterval(countdownInterval);
-    };
+    fetchData();
   }, []);
-
-  useEffect(() => {
-    if (timeRemaining === 0) {
-      setShowClaimButton(true);
-      setTimeout(() => {
-        setShowClaimButton(false);
-        setTimeRemaining(3 * 7 * 24 * 60 * 60); // Reset countdown to 3 weeks
-      }, 60 * 60 * 1000); // 1 hour in milliseconds
-    }
-  }, [timeRemaining]);
 
   // Format time to display in the format "HH:mm:ss"
   const formatTime = (time) => {
@@ -69,20 +47,6 @@ export default function Home() {
     const scaled = num / scale;
     return scaled.toFixed(2);
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-        try {
-            const response = await fetch('https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0xC13CbF50370E5EaE6f5Dd9D8a1015007f34C4eaD&apikey=RK9BKPUGPM4MIXZBXK4QWTYCW3YRN3WGKF');
-            const data = await response.json();
-            const totalSupplyValue = data.result && !isNaN(data.result) ? Number(data.result) : 0;
-            setTotalSupply(formatNumber(totalSupplyValue));
-        } catch (error) {
-            console.error('Error fetching coin data:', error);
-        }
-    };
-    fetchData();
-}, []);
 
   return (
     <>
@@ -118,20 +82,15 @@ export default function Home() {
           <div className='grid lg:grid-cols-3 gap-3 w-full text-white'>
             <div className='rounded-lg bg-[#152a3b]  border-dashed flex flex-col gap-3 items-center justify-center h-[200px]'>
               <p className='text-xl'>Claim Rewards</p>
-
-              {showClaimButton && (
-                <Claim />
-              )}
+              <Claim />
             </div>
             {/* <div className='rounded-lg bg-[#152a3b]  border-dashed flex flex-col gap-3 items-center justify-center h-[200px]'>
               <p className='text-xl'>Your Dividend holdings </p>
-
               <BalanceOf />
-
             </div> */}
             <div className='rounded-lg bg-[#152a3b]  border-dashed flex flex-col gap-3 items-center justify-center h-[200px]'>
               <p className='text-xl'>Next Payout</p>
-              <div>{formatTime(timeRemaining)}</div>
+              <div>{BalanceOf}</div>
             </div>
             {/* <div className='rounded-lg bg-[#152a3b]  border-dashed flex flex-col gap-3 items-center justify-center h-[200px]'>
               <p className='text-xl'>Dividend holders</p>
@@ -141,8 +100,6 @@ export default function Home() {
               <p className='text-xl'>Total Rewards</p>
               <WithdrawableDividend />
             </div> */}
-
-
           </div>
         </div>
       </div>
