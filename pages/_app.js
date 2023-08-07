@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
     <ThirdwebProvider activeChain={activeChain}>
       <Head>
         {/* Add your SEO information here */}
-        <title>Limtless Network Dex</title>
+        <title>Limitless Network Dex</title>
         <meta name="description" content="Limitless Network Dex" />
         {/* Add more meta tags or other SEO-related elements as needed */}
       </Head>

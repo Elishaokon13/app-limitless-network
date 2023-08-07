@@ -78,7 +78,7 @@ export default function Home() {
             </div> */}
             <div className='rounded-lg bg-[#152a3b]  border-dashed flex flex-col gap-3 items-center justify-center h-[200px]'>
               <p className='text-xl'>Balance</p>
-              <div>{BalanceOf}</div>
+              <BalanceOf />
             </div>
             {/* <div className='rounded-lg bg-[#152a3b]  border-dashed flex flex-col gap-3 items-center justify-center h-[200px]'>
               <p className='text-xl'>Dividend holders</p>

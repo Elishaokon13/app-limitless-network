@@ -75,7 +75,7 @@ export default function Example() {
                                 className="h-8 w-auto"
                                 src={Logo}
                                 alt=""
-                            /> Limitless Network
+                            /> <span className="text-white">Limitless Network</span>
                         </Link>
                         <button
                             type="button"
