@@ -9,9 +9,7 @@ const MainChainUpdater = () => {
 }
 
 const TokenUsdPriceUpdater = () => {
-  const isMainChain = useIsMainChain()
-
-  return <>{isMainChain && <MainChainUpdater />}</>
+  return <>{<MainChainUpdater />}</>
 }
 
 export default React.memo(TokenUsdPriceUpdater)

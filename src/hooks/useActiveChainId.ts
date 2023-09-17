@@ -38,7 +38,6 @@ export const useActiveChainId = () => {
 
   const { chain } = useNetwork()
   const chainId = localChainId ?? chain?.id ?? (queryChainId >= 0 ? CHAIN_ID : undefined)
-
   const isNotMatched = chain && localChainId && chain.id !== localChainId
 
   return {

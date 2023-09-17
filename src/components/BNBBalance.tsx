@@ -18,7 +18,7 @@ const BNBBalance: React.FC<BNBBalanceProps> = ({ value }) => {
 
   const earningsBusd = React.useMemo(() => {
     if (value && bnbPrice) {
-      return Number(bnbPrice) * Number(value)
+      return parseFloat(bnbPrice) * parseFloat(value.toString())
     }
     return 0
   }, [value, bnbPrice])

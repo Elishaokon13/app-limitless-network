@@ -15,10 +15,10 @@ const StyledInlineWrapper = styled.span`
 
 const LNTBalance: React.FC<LNTBalanceProps> = ({ value }) => {
   const lntPrice = useLNTStatePriceFixed()
-  const lntBalance = Number(value)
+  const lntBalance = parseFloat(value.toString())
   const lntBusd = React.useMemo(() => {
     if (value && lntPrice) {
-      return Number(lntPrice) * lntBalance
+      return parseFloat(lntPrice) * lntBalance
     }
     return 0
   }, [value, lntPrice])

@@ -3,7 +3,7 @@ import Trans from './Trans'
 import { useWeb3Modal } from '@web3modal/react'
 
 const ConnectWalletButton = (props) => {
-  const { open, close } = useWeb3Modal()
+  const { open } = useWeb3Modal()
 
   return (
     <Button onClick={open} {...props}>
