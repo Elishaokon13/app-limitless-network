@@ -21,8 +21,9 @@ const SwapTitle = () => {
   )
 }
 
-const handleTokenSelect = (outputToken) => {    
+const handleTokenSelect = (outputToken, inputToken) => {    
   console.log(outputToken.symbol)
+  console.log(inputToken.symbol)
 }
 
 const SwapWidget = () => {
@@ -70,7 +71,7 @@ const SwapWidget = () => {
   )
 }
 
-/*
+
 const Chart = () => {
   return(
     <>
@@ -78,7 +79,7 @@ const Chart = () => {
     </>
   )
 }
-*/
+
 
 const Stats = () => {
   const { width } = useWindowDimensions();
@@ -117,6 +118,10 @@ const Swap = () => {
 
         <FlexItem xs={12} md={6}>
           <Stats/>
+        </FlexItem>    
+
+        <FlexItem xs={12} md={12}>
+          <Chart/>
         </FlexItem>    
 
       </Flex>
