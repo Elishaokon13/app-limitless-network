@@ -26,8 +26,8 @@ const Swap = () => {
     )
   }
 
-  const handleTokenSelect = (outputToken, inputToken) => {    
-    (outputToken && outputToken.symbol === "LNT" || inputToken && inputToken.symbol === "LNT") ? setLntActive(true) : setLntActive(false)
+  const handleTokenSelect = (outputToken, inputToken) => {  
+    //(outputToken && outputToken.symbol === "LNT" && lntActive !== true || inputToken && inputToken.symbol === "LNT" && lntActive !== true) ? setLntActive(true) : setLntActive(false)
   }
 
   const SwapWidget = () => {

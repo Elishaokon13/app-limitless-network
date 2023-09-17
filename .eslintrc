@@ -26,6 +26,7 @@
     "react/no-unused-prop-types": 0,
     "@next/next/no-img-element": 0,
     "no-sparse-arrays": 0,
+    "react/prop-types": 0,
     "react-hooks/exhaustive-deps": [
       "warn",
       {
@@ -72,5 +73,6 @@
     "react/default-props-match-prop-types":["warn"]
 
     // End temporary rules
-  }
+  },
+  "plugins": ["react"],
 }
