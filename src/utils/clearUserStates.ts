@@ -1,7 +1,7 @@
 import { Dispatch } from '@reduxjs/toolkit'
-import { connectorLocalStorageKey } from 'uikit'
 import { resetUserState } from 'state/global/actions'
-import { connectorsByName } from './web3React'
+
+const connectorLocalStorageKey = 'connectorIdv2'
 
 export const clearUserStates = (
   dispatch: Dispatch<any>,

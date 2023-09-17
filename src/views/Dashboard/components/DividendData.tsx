@@ -29,24 +29,15 @@ const RewardsTitle = () => {
   )
 }
 
-const RewardsButtonText = () => {
-  if (claimLoading){
-    <b>t('Collecting...')</b>
-  }
-  <b>{claimLoading ? t('Collecting...') : t('Collect Rewards')}</b>
-
-}
-
-
 
 const DividendData: React.FC<DividendDataProps> = ({ account }) => {
   const { t } = useTranslation()  
 
   const {balance, balanceFetchStatus} = useLimitlessTokenBalance()
   const {dividends, dividendsFetchStatus} = useLimitlessDividendInfo()
-  const dividendsLoading = (dividendsFetchStatus === "success") ? false : true
+  const dividendsLoading = (dividendsFetchStatus === "success")
   const {withdrawableDividends, withdrawableDividendsFetchStatus} = useLimitlessWithdrawable()
-  const wDividendsLoading = (withdrawableDividendsFetchStatus === "success") ? false : true
+  const wDividendsLoading = (withdrawableDividendsFetchStatus === "success")
   const fetchDividend = () => {}
   const dividendsReceived = dividends? dividends[0] : null
 
@@ -75,7 +66,7 @@ const DividendData: React.FC<DividendDataProps> = ({ account }) => {
       <RewardsTitle/>
       <br />
       <DisplayHelper label={t('Token Balance')}>
-        {(balanceFetchStatus == 'success') ? (
+        {(balanceFetchStatus === 'success') ? (
           <>
             {balanceDisplayValue} <LNTBalance value={balance} />
           </>
@@ -90,7 +81,7 @@ const DividendData: React.FC<DividendDataProps> = ({ account }) => {
           'This is the amount of rewards still to be collected. Click "Collect Rewards" below to withdraw your rewards to your wallet.',
         )}
       >
-        {(withdrawableDividendsFetchStatus == 'success') ? (
+        {(withdrawableDividendsFetchStatus === 'success') ? (
           <>
             {availableDividendDisplayValue} <BNBBalance value={withdrawableDividends} />
           </>
@@ -105,7 +96,7 @@ const DividendData: React.FC<DividendDataProps> = ({ account }) => {
           'This is the amount of rewards this wallet has received from Limitless Network.',
         )}
       >
-        {(dividendsFetchStatus == 'success') ? (
+        {(dividendsFetchStatus === 'success') ? (
           <>
             {dividendsReceivedDisplayValue} <BNBBalance value={dividendsReceived} />
           </>

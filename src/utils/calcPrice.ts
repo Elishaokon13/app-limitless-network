@@ -4,7 +4,7 @@ import token_ABI from 'config/abi/token_ABI.json'
 
 const provider = new ethers.providers.JsonRpcProvider(process.env.NEXT_PUBLIC_NODE_PRODUCTION)
 
-export default async function usePrice(address: string, pair_address: string) {
+export default async function calcPrice(address: string, pair_address: string) {
 
     //Pair Info   
     const pair_contract = new ethers.Contract(pair_address, pair_ABI, provider)     
@@ -25,20 +25,8 @@ export default async function usePrice(address: string, pair_address: string) {
     ]) 
 
     if (address === address1) {
-        return (ethers.utils.formatUnits(reserve0, decimals0))/(ethers.utils.formatUnits(reserve1, decimals1))
+        return parseFloat(ethers.utils.formatUnits(reserve0, decimals0))/parseFloat(ethers.utils.formatUnits(reserve1, decimals1))
     } else {
-        return (ethers.utils.formatUnits(reserve1, decimals1))/(ethers.utils.formatUnits(reserve0, decimals0))
+        return parseFloat(ethers.utils.formatUnits(reserve1, decimals1))/parseFloat(ethers.utils.formatUnits(reserve0, decimals0))
     }
 }
-
-/*
-export default async function getLNTUSDPrice() {
-    
-    const [lntPrice, bnbPrice] = await Promise.all([
-        get_price(lnt_token_address, lnt_pair_address),
-        get_price(bnb_token_address, bnb_pair_address)
-    ])
-    const lntUSDPrice = lntPrice * bnbPrice
-    return lntUSDPrice
-}
-*/

@@ -5,7 +5,6 @@ import { useTranslation } from 'contexts/Localization'
 import config from './config/config'
 import { getActiveMenuItem, getActiveSubMenuItem } from './utils'
 import { footerLinks } from './config/footerConfig'
-import useLNTPrice from 'hooks/useLNTPrice'
 import { useLNTStatePrice } from 'state/global/hooks'
 import { stringToFixed } from 'utils/limitlessUtils'
 

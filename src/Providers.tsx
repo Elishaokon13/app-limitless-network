@@ -5,7 +5,6 @@ import { SWRConfig } from 'swr'
 import { ThemeProvider } from 'styled-components'
 import { LanguageProvider } from 'contexts/Localization'
 import { ToastsProvider } from 'contexts/ToastsContext'
-import { fetchStatusMiddleware } from 'hooks/useSWRContract'
 import { Store } from '@reduxjs/toolkit'
 import { MatchBreakpointsProvider } from 'uikit/contexts'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -30,13 +29,7 @@ const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
             <ToastsProvider>
               <ThemeProviderWrapper>
                 <LanguageProvider>
-                  <SWRConfig
-                    value={{
-                      use: [fetchStatusMiddleware],
-                    }}
-                  >
-                    <ModalProvider>{children}</ModalProvider>
-                  </SWRConfig>
+                  <ModalProvider>{children}</ModalProvider>
                 </LanguageProvider>
               </ThemeProviderWrapper>
             </ToastsProvider>

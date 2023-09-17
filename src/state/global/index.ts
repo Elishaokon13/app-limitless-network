@@ -2,7 +2,7 @@ import { createReducer } from '@reduxjs/toolkit'
 import { updateLNTPrice, updateBNBPrice } from './actions'
 
 interface TokenPriceInfo {
-  price: Number
+  price: number
   fixedPrice: string
 }
 export interface GlobalState {
@@ -26,7 +26,7 @@ export default createReducer(initialState, (builder) =>
       if (price) {
         state.lnt.price = price
         const fixedPrice = price.toFixed(6)        
-        state.lnt.fixedPrice = Number(fixedPrice) ? fixedPrice : '<0.0000001'
+        state.lnt.fixedPrice = parseFloat(fixedPrice) ? fixedPrice : '<0.0000001'
       } else {
         state.lnt = initialPriceInfo
       }
@@ -35,7 +35,7 @@ export default createReducer(initialState, (builder) =>
       if (price) {
         state.bnb.price = price
         const fixedPrice = price.toFixed(3)
-        state.bnb.fixedPrice = Number(fixedPrice) ? fixedPrice : '<0.0001'
+        state.bnb.fixedPrice = parseFloat(fixedPrice) ? fixedPrice : '<0.0001'
       } else {
         state.bnb = initialPriceInfo
       }

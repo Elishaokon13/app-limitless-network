@@ -4,24 +4,7 @@ import JSBI from 'jsbi'
 export type BigintIsh = JSBI | number | string
 
 export enum ChainId {
-  BSC = 56,
-  // replace with bsc
-  BSC_TESTNET = 97,
-  // replace with bsc testnet
-  Ethereum = 1,
-  Ropsten = 3,
-  Rinkeby = 4,
-  Goerli = 5,
-  Kovan = 42,
-  Ganache = 1337,
-  Polygon = 137,
-  PolygonMumbai = 80001,
-  Avalanche = 43114,
-  Fantom = 250,
-  Celo = 42220,
-  Optimism = 10,
-  Arbitrum = 42161,
-  ArbitrumRinkeby = 421611,
+  BSC = 56
 }
 
 export type ChainIdMap<T> = Partial<Record<ChainId, T>>

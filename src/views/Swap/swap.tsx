@@ -70,20 +70,22 @@ const SwapWidget = () => {
   )
 }
 
+/*
 const Chart = () => {
   return(
     <>
-    <iframe width="100%" height="850" src="https://coinbrain.com/embed/bnb-0xc13cbf50370e5eae6f5dd9d8a1015007f34c4ead?theme=custom&accent=2196f3&padding=16&background=000000&chart=1&trades=1"></iframe>
+    <iframe title="lntChart" width="100%" height="850" src="https://coinbrain.com/embed/bnb-0xc13cbf50370e5eae6f5dd9d8a1015007f34c4ead?theme=custom&accent=2196f3&padding=16&background=000000&chart=1&trades=1"></iframe>
     </>
   )
 }
+*/
 
 const Stats = () => {
   const { width } = useWindowDimensions();
   const statsHeight = (): string => {
     if (width < 852){
       return '500px'
-    } {
+    } else {
       return "100%"
     }
   }
@@ -91,7 +93,7 @@ const Stats = () => {
 
   return(
     <>
-    <iframe width="100%" height={widgetHeight}  src="https://coinbrain.com/coins/bnb-0xc13cbf50370e5eae6f5dd9d8a1015007f34c4ead/ticker?theme=custom&accent=2196f3&background=000000&padding=16&type=large&currency=USD&blocks=price%2CmarketCap%2Cvolume24h%2Cliquidity"></iframe>
+    <iframe title="lntStats" width="100%" height={widgetHeight}  src="https://coinbrain.com/coins/bnb-0xc13cbf50370e5eae6f5dd9d8a1015007f34c4ead/ticker?theme=custom&accent=2196f3&background=000000&padding=16&type=large&currency=USD&blocks=price%2CmarketCap%2Cvolume24h%2Cliquidity"></iframe>
     </>
   )
 }
@@ -115,7 +117,7 @@ const Swap = () => {
 
         <FlexItem xs={12} md={6}>
           <Stats/>
-        </FlexItem>       
+        </FlexItem>    
 
       </Flex>
       <br />

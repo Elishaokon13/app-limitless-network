@@ -3,14 +3,7 @@ import { useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 import { persistReducer, persistStore } from 'redux-persist'
 import createWebStorage from 'redux-persist/lib/storage/createWebStorage'
-import blockReducer from './block'
 import { updateVersion } from './global/actions'
-import infoReducer from './info'
-import lists from './lists/reducer'
-import multicall from './multicall/reducer'
-import swap from './swap/reducer'
-import transactions from './transactions/reducer'
-import user from './user/reducer'
 import global from './global'
 
 const createNoopStorage = () => {
@@ -42,21 +35,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(
   persistConfig,
   combineReducers({
-    block: blockReducer, // todo: is this useful?
-    // pools: poolsReducer,
-    // predictions: predictionsReducer,
-    // profile: profileReducer,
-    // lottery: lotteryReducer,
-    info: infoReducer,
     global,
-    // nftMarket: nftMarketReducer,
-
-    // Exchange
-    user,
-    transactions,
-    swap,
-    multicall, // contract calls?
-    lists, // token lists
   }),
 )
 

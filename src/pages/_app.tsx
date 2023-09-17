@@ -1,7 +1,5 @@
 import { ResetCSS } from 'uikit'
-import BigNumber from 'bignumber.js'
 import { ToastListener } from 'contexts/ToastsContext'
-import useEagerConnect from 'hooks/useEagerConnect'
 import { useAccountEventListener } from 'hooks/useAccountEventListener'
 import useUserAgent from 'hooks/useUserAgent'
 import type { AppProps } from 'next/app'
@@ -13,7 +11,6 @@ import { NextPage } from 'next'
 import { AnimatePresence } from 'framer-motion'
 import NProgress from 'nprogress'
 import SingletonRouter from 'next/router'
-import TermOfUseModal from 'components/TermOfUseModal'
 import Menu from '../components/Menu'
 import Providers from '../Providers'
 import GlobalStyle from '../style/Global'
@@ -43,15 +40,7 @@ const whenFinishLoad = () => {
 SingletonRouter.events.on('routeChangeComplete', whenFinishLoad)
 SingletonRouter.events.on('routeChangeError', whenFinishLoad)
 
-// This config is required for number formatting
-BigNumber.config({
-  EXPONENTIAL_AT: 1000,
-  DECIMAL_PLACES: 80,
-})
-
 function GlobalHooks() {
-  useEagerConnect()
-
   useUserAgent()
   useAccountEventListener()
   useSW()
@@ -63,7 +52,7 @@ function MyApp(props: AppProps) {
   const url = `https://limitlessnetwork.org${router.route}`
   const pageTitle = 'Limitless Network - Save Money and Time with DeFi Liquidity Aggregation'
   const pageDescription =
-    'Limitless Network aggregates DeFi liquidity, providing the best swaps with low fees. Save money and time with our ecosystem token, integration technology, and expert developer support.'
+    'Limitless Network'
 
   return (
     <>

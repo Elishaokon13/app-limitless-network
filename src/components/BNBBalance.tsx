@@ -1,13 +1,12 @@
 import { TextProps } from 'uikit'
 import React from 'react'
-import BigNumber from 'bignumber.js'
 import { useBNBStatePriceFixed } from 'state/global/hooks'
 import styled from 'styled-components'
 import Balance from './Balance'
 import { baseColors } from 'uikit/theme/colors'
 
 interface BNBBalanceProps extends TextProps {
-  value: string | BigNumber
+  value: string | number
 }
 
 const StyledInlineWrapper = styled.span`
