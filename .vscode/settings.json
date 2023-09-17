@@ -17,5 +17,6 @@
             "group": "Default"
         }
     ],
-    "search.useIgnoreFiles": false
+    "search.useIgnoreFiles": true,
+    "search.useGlobalIgnoreFiles": true,
 }
