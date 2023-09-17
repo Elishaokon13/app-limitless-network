@@ -91,9 +91,9 @@ const DividendData: React.FC<DividendDataProps> = ({ account }) => {
       </DisplayHelper>
       <br />
       <DisplayHelper
-        label={t('Total rewards collected')}
+        label={t('Total rewards already collected')}
         tooltip={t(
-          'This is the amount of rewards this wallet has received from Limitless Network.',
+          'This is the amount of rewards this wallet has already received from Limitless Network. Note you will periodically receive an automatic reward payout, which is included in this total.',
         )}
       >
         {(dividendsFetchStatus === 'success') ? (
