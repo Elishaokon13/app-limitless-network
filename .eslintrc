@@ -71,7 +71,11 @@
     "import/order": 0,
     "no-useless-constructor":["warn"],
     "react/default-props-match-prop-types":["warn"]
-
+    "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  }
     // End temporary rules
   },
   "plugins": ["react"],
