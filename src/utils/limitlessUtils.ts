@@ -110,9 +110,8 @@ export const formatHex = (hex: any): string => formatEther(BigNumber.from(hex).t
 
 export const canCollect = (fixed: string): boolean => {
   if (fixed) {
-    const t = Number(fixed.replaceAll(',', ''))
-    return t > 0
+    const t = parseFloat(fixed)
+    return t >= 0.0001
   }
-
   return false
 }

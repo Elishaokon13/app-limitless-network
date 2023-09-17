@@ -35,9 +35,9 @@ const DividendData: React.FC<DividendDataProps> = ({ account }) => {
 
   const {balance, balanceFetchStatus} = useLimitlessTokenBalance()
   const {dividends, dividendsFetchStatus} = useLimitlessDividendInfo()
-  const dividendsLoading = (dividendsFetchStatus === "success")
+  //const dividendsLoading = (dividendsFetchStatus === "success")
   const {withdrawableDividends, withdrawableDividendsFetchStatus} = useLimitlessWithdrawable()
-  const wDividendsLoading = (withdrawableDividendsFetchStatus === "success")
+  //const wDividendsLoading = (withdrawableDividendsFetchStatus === "success")
   const fetchDividend = () => {}
   const dividendsReceived = dividends? dividends[0] : null
 
@@ -50,12 +50,12 @@ const DividendData: React.FC<DividendDataProps> = ({ account }) => {
   const dividendsReceivedDisplayValue = dividends ? `${dividendsReceivedDisplayStr} BNB` : '-'
 
   const {claimLoading, handleClaim} = useLimitlessWithdraw(fetchDividend)
-  const [onPresentWithdrawModal] = useModal(<WithdrawDividendModal onConfirm={handleClaim} />)
+  const [onPresentWithdrawModal] = useModal(<WithdrawDividendModal onConfirm={handleClaim} />)  
 
   let buttonText
   if (claimLoading){
     buttonText = <b>{t('Collecting...')}</b>
-  } else if (parseFloat(withdrawableDividends) > 0){
+  } else if (parseFloat(withdrawableDividends) >= 0.0001){
     buttonText = <b>{t('Collect Rewards')}</b>
   } else {
     buttonText = <b>{t('No Rewards Available')}</b>
@@ -110,7 +110,7 @@ const DividendData: React.FC<DividendDataProps> = ({ account }) => {
       {account ? (
         <Button
           width="100%"
-          isLoading={dividendsLoading || wDividendsLoading || claimLoading}
+          isLoading={claimLoading}
           height="50px"
           scale="md"
           disabled={!canCollect(withdrawableDividends)}
