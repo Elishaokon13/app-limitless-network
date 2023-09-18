@@ -4,6 +4,15 @@ import {Flex, FlexItem } from 'uikit'
 import { PoodlApp } from '@poodl/widget';
 import useWindowDimensions from 'hooks/useWindowDimensions';
 import { useState } from 'react';
+import LogoSrc from 'assets/limitlesslogo.png'
+import Image from 'next/image'
+
+const LNTLogo = () => {
+  return (
+    <>
+      <Image src={LogoSrc} alt="Logo" width={40} height={40} />
+    </>
+)}
 
 const Swap = () => {
 
@@ -14,7 +23,7 @@ const Swap = () => {
       <Flex width="100%" maxWidth={{ xs: '145px', md: '175px' }}>
       <div style={{display: "flex"}}>
         <div style={{flex: 1}}>
-          <img src="https://www.limitlessnetwork.org/_next/static/media/Logo.3a89c1e7.png?imwidth=3840" alt="logo" style={{height: "45px"}} />
+          <LNTLogo />
         </div>
         <div style={{flex: 2, alignSelf: "center"}}>
           <div>
@@ -35,7 +44,7 @@ const Swap = () => {
       <>
         <PoodlApp
           onTokenSelect={handleTokenSelect}
-          primaryColorDark='#2196f3'
+          primaryColorDark='#fbc402'
           borderRadius={5}
           enableDarkMode={true}   
           predefinedTokens={[
@@ -63,7 +72,7 @@ const Swap = () => {
           overrides={{
             SwapCard: {
               sx: {
-                backgroundColor: '#000000',
+                backgroundColor: '#060809',
                 borderColor: 'secondary.main',
                 minWidth: '100%'
               }
@@ -77,7 +86,12 @@ const Swap = () => {
 
 
   const Chart = () => {
-    const url = "https://coinbrain.com/embed/bnb-0xc13cbf50370e5eae6f5dd9d8a1015007f34c4ead?theme=custom&accent=2196f3&padding=16&background=000000&chart=1&trades=1"
+    const url = "https://coinbrain.com/embed/bnb-0xc13cbf50370e5eae6f5dd9d8a1015007f34c4ead?theme=custom&accent=fbc402&padding=16&background=060809&chart=1&trades=1"    
+    fetch(url)
+    .then(response => {
+    })
+    .catch(error => {
+    });
     return(
       <>
       <iframe title="lntChart" width="100%" height="850" src={url}></iframe>
@@ -96,10 +110,32 @@ const Swap = () => {
       }
     }
     const widgetHeight = statsHeight()
-    const url = "https://coinbrain.com/coins/bnb-0xc13cbf50370e5eae6f5dd9d8a1015007f34c4ead/ticker?theme=custom&accent=2196f3&background=000000&padding=16&type=large&currency=USD&blocks=price%2CmarketCap%2Cvolume24h%2Cliquidity"
+    const url = "https://coinbrain.com/coins/bnb-0xc13cbf50370e5eae6f5dd9d8a1015007f34c4ead/ticker?theme=custom&accent=fbc402&background=060809&padding=16&type=large&currency=USD&blocks=price%2CmarketCap%2Cvolume24h%2Cliquidity"  
+    
+    /*
+    const widgetLoaded = () => {
+      fetch('https://corsproxy.io/?' + encodeURIComponent(url))
+        .then(response => {
+          console.log(response.ok)
+          const statusCode = response.status
+          const isSuccessful = response.ok
+          return isSuccessful
+        })
+        .catch(error => {
+          return false
+        })
+      return true
+    }
+    const displayWidget = widgetLoaded()    
+    */
+    const displayWidget = true
     return(
       <>
-      <iframe title="lntStats" width="100%" height={widgetHeight}  src={url}></iframe>
+      {displayWidget ? (
+        <>
+        <iframe title="lntStats" width="100%" height={widgetHeight}  src={url}></iframe>
+        </>
+      ) : (undefined) }
       </>
     )
   }

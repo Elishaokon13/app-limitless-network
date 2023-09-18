@@ -43,7 +43,7 @@ const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
       defaultChain= {bsc}
       themeVariables={{
         '--w3m-font-family': 'Roboto, sans-serif',
-        '--w3m-accent-color': '#2196f3',
+        '--w3m-accent-color': '#fbc402',
         '--w3m-button-border-radius': '5px',
         '--w3m-text-medium-regular-size': '1rem',
         '--w3m-logo-image-url': ''

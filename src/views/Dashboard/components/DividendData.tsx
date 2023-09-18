@@ -9,16 +9,25 @@ import LNTBalance from 'components/LNTBalance'
 import { StyledBorderCard } from '../styled'
 import DisplayHelper from './DisplayHelper'
 import WithdrawDividendModal from './WithdrawDividendModal'
+import LogoSrc from 'assets/limitlesslogo.png'
+import Image from 'next/image'
 
 interface DividendDataProps {
   account: string
 }
 
+const LNTLogo = () => {
+  return (
+    <>
+      <Image src={LogoSrc} alt="Logo" width={50} height={50} />
+    </>
+)}
+
 const RewardsTitle = () => {
   return(
     <div style={{display: "flex", width: "175px"}}>
       <div style={{flex: 1}}>
-        <img src="https://www.limitlessnetwork.org/_next/static/media/Logo.3a89c1e7.png?imwidth=3840" alt="logo" style={{height: "50px"}} />
+        <LNTLogo />
       </div>
       <div style={{flex: 2, alignSelf: "center"}}>
         <div>
