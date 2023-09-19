@@ -1005,7 +1005,7 @@
   resolved "https://registry.yarnpkg.com/@catconsult/simplify-modal-control/-/simplify-modal-control-1.1.1.tgz#1f2120552df63a055daab4c6f35ebd8463b0335c"
   integrity sha512-7Dl685NecB9zshh3jxMcaMcakbf94fPTK8WQP5cuzn1TzGolDWOzEon/ODlr+dZvRBFhK1sAbS51fvzoV3a0BA==
 
-"@coinbase/wallet-sdk@^3.6.6":
+"@coinbase/wallet-sdk@^3.6.4", "@coinbase/wallet-sdk@^3.6.6":
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/@coinbase/wallet-sdk/-/wallet-sdk-3.7.2.tgz#7a89bd9e3a06a1f26d4480d8642af33fb0c7e3aa"
   integrity sha512-lIGvXMsgpsQWci/XOMQIJ2nIZ8JUy/L+bvC0wkRaYarr0YylwpXrJ2gRM3hCXPS477pkyO7N/kSiAoRgEXUdJQ==
@@ -2360,10 +2360,10 @@
   resolved "https://registry.yarnpkg.com/@poodl/contract-addresses/-/contract-addresses-1.5.3.tgz#3a6d6d846128bd464405d93f2f5acbf0955bd4df"
   integrity sha512-bFdTuIfzHczJxZLgFAU0zh7gTvVLL2BkPIEFmJcnirVtEq0uYf8RII8ZxHYY9z6OcZo0mntnZe3RCW/5x4dsRA==
 
-"@poodl/widget@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@poodl/widget/-/widget-1.1.2.tgz#075020cfcee71678837cdc740d9f4bb500683996"
-  integrity sha512-EEc/wr0Lxwk0U4xL7PPxlLmSg+wgSHjKT0HgdJ1rUdZ38FBSbGaZko/1QMz9YLIOlpKVImaSBf9NOjO9TAHEEw==
+"@poodl/widget@1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@poodl/widget/-/widget-1.1.3.tgz#694a8dfbc74b94dae846a707b1e6639f44c8d8d8"
+  integrity sha512-vqzFy86m2Juc5Cqn8gmnmxq3T4x1JeIKlNX/b+HMIMvy/jrsOOMqSigmKFZWsxA39Rra0xP8vQoMkZrLLtXlCw==
   dependencies:
     "@catconsult/simplify-modal-control" "^1.1.1"
     "@emotion/react" "^11.0.0"
@@ -2375,13 +2375,13 @@
     buffer "^6.0.0"
     copy-to-clipboard "^3.3.3"
     ethers "^5.0.0"
+    poodl-wagmi "npm:wagmi@0.12.12"
     react "^18.0.0"
     react-dom "^18.0.0"
     react-number-format "^5.1.2"
     react-toastify "^9.0.0"
     react-window "^1.8.8"
     react-xarrows "^2.0.2"
-    wagmi "^0.12.12"
 
 "@popperjs/core@^2.11.8":
   version "2.11.8"
@@ -3358,28 +3358,28 @@
     "@typescript-eslint/types" "5.62.0"
     eslint-visitor-keys "^3.3.0"
 
-"@wagmi/chains@0.2.22":
-  version "0.2.22"
-  resolved "https://registry.yarnpkg.com/@wagmi/chains/-/chains-0.2.22.tgz#25e511e134a00742e4fbf5108613dadf876c5bd9"
-  integrity sha512-TdiOzJT6TO1JrztRNjTA5Quz+UmQlbvWFG8N41u9tta0boHA1JCAzGGvU6KuIcOmJfRJkKOUIt67wlbopCpVHg==
+"@wagmi/chains@0.2.19":
+  version "0.2.19"
+  resolved "https://registry.yarnpkg.com/@wagmi/chains/-/chains-0.2.19.tgz#d99febe8fb6bfa94fb8e27ebdbf21d58112f5c1f"
+  integrity sha512-pyqGjOscXH/ZFUJni+VpKmVIENz/vsgq2sgqpNAmLQ6h7/DYrzRvptij+b62K5wONZMr+7X2J5mHM9s4tkEd6A==
 
 "@wagmi/chains@1.7.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@wagmi/chains/-/chains-1.7.0.tgz#8f6ad81cf867e1788417f7c978ca92bc083ecaf6"
   integrity sha512-TKVeHv0GqP5sV1yQ8BDGYToAFezPnCexbbBpeH14x7ywi5a1dDStPffpt9x+ytE6LJWkZ6pAMs/HNWXBQ5Nqmw==
 
-"@wagmi/connectors@0.3.24":
-  version "0.3.24"
-  resolved "https://registry.yarnpkg.com/@wagmi/connectors/-/connectors-0.3.24.tgz#2c1d69fc0ae6b85b75a4d57547fc7e2d4bc117e8"
-  integrity sha512-1pI0G9HRblc651dCz9LXuEu/zWQk23XwOUYqJEINb/c2TTLtw5TnTRIcefxxK6RnxeJvcKfnmK0rdZp/4ujFAA==
+"@wagmi/connectors@0.3.16":
+  version "0.3.16"
+  resolved "https://registry.yarnpkg.com/@wagmi/connectors/-/connectors-0.3.16.tgz#572fb221f6945aa42b2fbf7332d2f00f408471b2"
+  integrity sha512-WtiFyvai6IWbV7DhujjmtJF0m+FFQCiIDrtHsNf1xio0gBfpnO8rT9PZQQf0uxuLn0nLxqXqYMMwzPipUNaIcg==
   dependencies:
-    "@coinbase/wallet-sdk" "^3.6.6"
+    "@coinbase/wallet-sdk" "^3.6.4"
     "@ledgerhq/connect-kit-loader" "^1.0.1"
     "@safe-global/safe-apps-provider" "^0.15.2"
     "@safe-global/safe-apps-sdk" "^7.9.0"
-    "@walletconnect/ethereum-provider" "2.9.0"
+    "@walletconnect/ethereum-provider" "2.7.0"
     "@walletconnect/legacy-provider" "^2.0.0"
-    "@walletconnect/modal" "^2.5.9"
+    "@web3modal/standalone" "^2.3.0"
     abitype "^0.3.0"
     eventemitter3 "^4.0.7"
 
@@ -3399,13 +3399,13 @@
     abitype "0.8.7"
     eventemitter3 "^4.0.7"
 
-"@wagmi/core@0.10.17":
-  version "0.10.17"
-  resolved "https://registry.yarnpkg.com/@wagmi/core/-/core-0.10.17.tgz#d2a641c3c608cad813e9eed290769d577512d935"
-  integrity sha512-qud45y3IlHp7gYWzoFeyysmhyokRie59Xa5tcx5F1E/v4moD5BY0kzD26mZW/ZQ3WZuVK/lZwiiPRqpqWH52Gw==
+"@wagmi/core@0.10.10":
+  version "0.10.10"
+  resolved "https://registry.yarnpkg.com/@wagmi/core/-/core-0.10.10.tgz#025299d484fb7de7980cad863c61ed6cfc481291"
+  integrity sha512-oghQIASk+QfrRku2m36NJTZnj5gpJNqfID5G3kZlBReWr01iOFbGfTVcS6Pcu2X3rsR2lmky8Tu5DWLXdKeGZg==
   dependencies:
-    "@wagmi/chains" "0.2.22"
-    "@wagmi/connectors" "0.3.24"
+    "@wagmi/chains" "0.2.19"
+    "@wagmi/connectors" "0.3.16"
     abitype "^0.3.0"
     eventemitter3 "^4.0.7"
     zustand "^4.3.1"
@@ -3500,7 +3500,7 @@
   dependencies:
     tslib "1.14.1"
 
-"@walletconnect/ethereum-provider@2.7.0", "@walletconnect/ethereum-provider@2.9.0", "@walletconnect/ethereum-provider@2.9.2":
+"@walletconnect/ethereum-provider@2.7.0", "@walletconnect/ethereum-provider@2.9.2":
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@walletconnect/ethereum-provider/-/ethereum-provider-2.7.0.tgz#5aaf10ce8de9269904b7714428554f1a64b7932d"
   integrity sha512-6TwQ05zi6DP1TP1XNgSvLbmCmLf/sz7kLTfMaVk45YYHNgYTTBlXqkyjUpQZI9lpq+uXLBbHn/jx2OGhOPUP0Q==
@@ -3686,13 +3686,6 @@
   dependencies:
     valtio "1.11.0"
 
-"@walletconnect/modal-core@2.6.2":
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/@walletconnect/modal-core/-/modal-core-2.6.2.tgz#d73e45d96668764e0c8668ea07a45bb8b81119e9"
-  integrity sha512-cv8ibvdOJQv2B+nyxP9IIFdxvQznMz8OOr/oR/AaUZym4hjXNL/l1a2UlSQBXrVjo3xxbouMxLb3kBsHoYP2CA==
-  dependencies:
-    valtio "1.11.2"
-
 "@walletconnect/modal-ui@2.6.1":
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/@walletconnect/modal-ui/-/modal-ui-2.6.1.tgz#200c54c8dfe3c71321abb2724e18bb357dfd6371"
@@ -3703,16 +3696,6 @@
     motion "10.16.2"
     qrcode "1.5.3"
 
-"@walletconnect/modal-ui@2.6.2":
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/@walletconnect/modal-ui/-/modal-ui-2.6.2.tgz#fa57c087c57b7f76aaae93deab0f84bb68b59cf9"
-  integrity sha512-rbdstM1HPGvr7jprQkyPggX7rP4XiCG85ZA+zWBEX0dVQg8PpAgRUqpeub4xQKDgY7pY/xLRXSiCVdWGqvG2HA==
-  dependencies:
-    "@walletconnect/modal-core" "2.6.2"
-    lit "2.8.0"
-    motion "10.16.2"
-    qrcode "1.5.3"
-
 "@walletconnect/modal@2.6.1":
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/@walletconnect/modal/-/modal-2.6.1.tgz#066fdbfcff83b58c8a9da66ab4af0eb93e3626de"
@@ -3720,14 +3703,6 @@
   dependencies:
     "@walletconnect/modal-core" "2.6.1"
     "@walletconnect/modal-ui" "2.6.1"
-
-"@walletconnect/modal@^2.5.9":
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/@walletconnect/modal/-/modal-2.6.2.tgz#4b534a836f5039eeb3268b80be7217a94dd12651"
-  integrity sha512-eFopgKi8AjKf/0U4SemvcYw9zlLpx9njVN8sf6DAkowC2Md0gPU/UNEbH1Wwj407pEKnEds98pKWib1NN1ACoA==
-  dependencies:
-    "@walletconnect/modal-core" "2.6.2"
-    "@walletconnect/modal-ui" "2.6.2"
 
 "@walletconnect/qrcode-modal@^1.8.0":
   version "1.8.0"
@@ -4046,7 +4021,7 @@
     lit "2.8.0"
     motion "10.16.2"
 
-"@web3modal/standalone@^2.4.3":
+"@web3modal/standalone@^2.3.0", "@web3modal/standalone@^2.4.3":
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/@web3modal/standalone/-/standalone-2.4.3.tgz#98aaa65eba725c34d5be9078ef04b4e9b769d0f3"
   integrity sha512-5ATXBoa4GGm+TIUSsKWsfWCJunv1XevOizpgTFhqyeGgRDmWhqsz9UIPzH/1mk+g0iJ/xqMKs5F6v9D2QeKxag==
@@ -10156,6 +10131,18 @@ pngjs@^5.0.0:
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-5.0.0.tgz#e79dd2b215767fd9c04561c01236df960bce7fbb"
   integrity sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==
 
+"poodl-wagmi@npm:wagmi@0.12.12":
+  version "0.12.12"
+  resolved "https://registry.yarnpkg.com/wagmi/-/wagmi-0.12.12.tgz#1b87a1aa5360e43cca4272313ea215b0b9c4066c"
+  integrity sha512-AEY4res9WCeAEbVv++tgdx6981lkdiAwfpLPj24mawMoocj2Cqr6j304lq7EJiEhnoiPqIwvbBzme3sAmUWYUA==
+  dependencies:
+    "@tanstack/query-sync-storage-persister" "^4.27.1"
+    "@tanstack/react-query" "^4.28.0"
+    "@tanstack/react-query-persist-client" "^4.28.0"
+    "@wagmi/core" "0.10.10"
+    abitype "^0.3.0"
+    use-sync-external-store "^1.2.0"
+
 popmotion@11.0.3:
   version "11.0.3"
   resolved "https://registry.yarnpkg.com/popmotion/-/popmotion-11.0.3.tgz#565c5f6590bbcddab7a33a074bb2ba97e24b0cc9"
@@ -12737,18 +12724,6 @@ wagmi@1.3.10:
     "@tanstack/react-query-persist-client" "^4.28.0"
     "@wagmi/core" "1.3.9"
     abitype "0.8.7"
-    use-sync-external-store "^1.2.0"
-
-wagmi@^0.12.12:
-  version "0.12.19"
-  resolved "https://registry.yarnpkg.com/wagmi/-/wagmi-0.12.19.tgz#5f5038330907f70c033ea51ef8a9136289567256"
-  integrity sha512-S/el9BDb/HNeQWh1v8TvntMPX/CgKLDAoJqDb8i7jifLfWPqFL7gor3vnI1Vs6ZlB8uh7m+K1Qyg+mKhbITuDQ==
-  dependencies:
-    "@tanstack/query-sync-storage-persister" "^4.27.1"
-    "@tanstack/react-query" "^4.28.0"
-    "@tanstack/react-query-persist-client" "^4.28.0"
-    "@wagmi/core" "0.10.17"
-    abitype "^0.3.0"
     use-sync-external-store "^1.2.0"
 
 wait-on@7.0.1:
