@@ -1,18 +1,22 @@
 import { Colors } from './types'
 
+export const limitlessMainColor = '#2196f3'
+export const limitlessSecondaryColor = '#060809'
+export const limitlessTertiaryColor = '#00081a'
+
 export const baseColors = {
   failure: '#d32f2f',
-  primary: '#fbc402',
-  primaryBright: '#fbc402',
+  primary: limitlessMainColor,
+  primaryBright: limitlessMainColor,
   primaryDark: '',
   secondary: '#FFFFFF',
   secondaryBright: '#FFFFFF',
   secondaryDark: '#131313 ',
-  success: '#fbc402',
+  success: limitlessMainColor,
   warning: '#f7931E',
   lntGradient: 'linear-gradient(179deg,#fcd801 0%,#F1644C 50%,#E7337A 100%)',
   lntGradientText: 'linear-gradient(to bottom,#fcd801 35%,#F1644C 70%,#E7337A 80%);',
-  limitlessBlue: '#fbc402'
+  limitlessBlue: limitlessMainColor
 }
 
 export const additionalColors = {
@@ -24,11 +28,11 @@ export const additionalColors = {
 }
 
 const sharedGrad = {
-  limitlessHome: '#082338',
-  limitlessGrad: '#082338',
-  limitlessGrad2: '#082338',
-  limitlessGrad3: '#082338',
-  limitlessGrad4: '#082338',
+  limitlessHome: limitlessTertiaryColor,
+  limitlessGrad: limitlessTertiaryColor,
+  limitlessGrad2: limitlessTertiaryColor,
+  limitlessGrad3: limitlessTertiaryColor,
+  limitlessGrad4: limitlessTertiaryColor,
 }
 
 export const lightColors: Colors = {
@@ -66,11 +70,11 @@ export const lightColors: Colors = {
 export const darkColors: Colors = {
   ...baseColors,
   ...additionalColors,
-  background: '#060809',
+  background: limitlessSecondaryColor,
   backgroundDisabled: '#18191A',
   backgroundAlt: '#18191A',
   backgroundAlt2: '#18191A',
-  cardBorder: '#060809',
+  cardBorder: limitlessSecondaryColor,
   contrast: '#fcd801',
   dropdown: '#18191A',
   dropdownDeep: '#010f2f',

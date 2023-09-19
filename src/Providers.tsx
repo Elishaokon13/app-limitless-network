@@ -12,6 +12,7 @@ import { wagmiConfig, w3mProjectId, ethereumClient } from 'utils/wagmi'
 import { WagmiConfig } from 'wagmi'
 import { Web3Modal } from '@web3modal/react'
 import { bsc } from '@wagmi/core/chains'
+import { limitlessMainColor, limitlessSecondaryColor, limitlessTertiaryColor } from 'uikit/theme/colors'
 
 const ThemeProviderWrapper = (props) => {
   return <ThemeProvider theme={dark} {...props} />
@@ -43,7 +44,7 @@ const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
       defaultChain= {bsc}
       themeVariables={{
         '--w3m-font-family': 'Roboto, sans-serif',
-        '--w3m-accent-color': '#fbc402',
+        '--w3m-accent-color': limitlessMainColor,
         '--w3m-button-border-radius': '5px',
         '--w3m-text-medium-regular-size': '1rem',
         '--w3m-logo-image-url': ''

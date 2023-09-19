@@ -6,6 +6,7 @@ import useWindowDimensions from 'hooks/useWindowDimensions';
 import { useState } from 'react';
 import LogoSrc from 'assets/limitlesslogo.png'
 import Image from 'next/image'
+import { limitlessMainColor, limitlessSecondaryColor, limitlessTertiaryColor } from 'uikit/theme/colors'
 
 const LNTLogo = () => {
   return (
@@ -44,7 +45,7 @@ const Swap = () => {
       <>
         <PoodlApp
           onTokenSelect={handleTokenSelect}
-          primaryColorDark='#fbc402'
+          primaryColorDark={limitlessMainColor}
           borderRadius={5}
           enableDarkMode={true}   
           predefinedTokens={[
@@ -86,7 +87,7 @@ const Swap = () => {
 
 
   const Chart = () => {
-    const url = "https://coinbrain.com/embed/bnb-0xc13cbf50370e5eae6f5dd9d8a1015007f34c4ead?theme=custom&accent=fbc402&padding=16&background=060809&chart=1&trades=1"    
+    const url = "https://coinbrain.com/embed/bnb-0xc13cbf50370e5eae6f5dd9d8a1015007f34c4ead?theme=custom&accent=" + limitlessMainColor.replace('#','') + "&padding=16&background=" + limitlessSecondaryColor.replace('#','') + "&chart=1&trades=1"    
     fetch(url)
     .then(response => {
     })
@@ -110,7 +111,7 @@ const Swap = () => {
       }
     }
     const widgetHeight = statsHeight()
-    const url = "https://coinbrain.com/coins/bnb-0xc13cbf50370e5eae6f5dd9d8a1015007f34c4ead/ticker?theme=custom&accent=fbc402&background=060809&padding=16&type=large&currency=USD&blocks=price%2CmarketCap%2Cvolume24h%2Cliquidity"  
+    const url = "https://coinbrain.com/coins/bnb-0xc13cbf50370e5eae6f5dd9d8a1015007f34c4ead/ticker?theme=custom&accent=" + limitlessMainColor.replace('#','') + "&background=" + limitlessSecondaryColor.replace('#','') + "&padding=16&type=large&currency=USD&blocks=price%2CmarketCap%2Cvolume24h%2Cliquidity"  
     
     /*
     const widgetLoaded = () => {
