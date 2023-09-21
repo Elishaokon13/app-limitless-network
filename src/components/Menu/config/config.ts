@@ -13,7 +13,7 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     showItemsOnMobile: false,
   },{
     label: 'Swap',
-    href: '/swap',
+    href: 'https://swap.limitlessnetwork.org/',
     // Icon: MoreIcon,
     hideSubNav: true,
     showItemsOnMobile: false,

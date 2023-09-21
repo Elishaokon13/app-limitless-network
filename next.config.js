@@ -41,10 +41,9 @@ const nextConfig = {
   },
 }
 
-const withTM = require('next-transpile-modules')(['@poodl/widget']);
 
 module.exports = (_phase) => {
-  const plugins = [withBundleAnalyzer, withPWA, withAxiom, withTM]
+  const plugins = [withBundleAnalyzer, withPWA, withAxiom]
   const config = plugins.reduce((acc, plugin) => plugin(acc), {
     ...nextConfig,
   })

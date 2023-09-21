@@ -27,7 +27,7 @@ const PriceLink = styled.a`
 
 const CakePrice: React.FC<Props> = ({ cakePriceUsd, color = 'textSubtle', showLogo = true }) => {
   return cakePriceUsd ? (
-    <PriceLink href="https://app.limitlessnetwork.org/swap" target="_blank">
+    <PriceLink href="https://swap.limitlessnetwork.org" target="_blank">
       {showLogo && <Image src={LimitlessNetwork} width={24} height={28} alt="Limitless Network Token" />}
       <Text color={color} bold ml="0.5rem">
         ${cakePriceUsd}
