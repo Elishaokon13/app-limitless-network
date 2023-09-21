@@ -1,3 +1,3 @@
-import Swap from 'views/Swap/swap'
+import Dashboard from 'views/Dashboard'
 
-export default Swap
+export default Dashboard
