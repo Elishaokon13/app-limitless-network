@@ -119,7 +119,7 @@ const Menu: React.FC<NavProps> = ({
   const pathname = usePathname()
   
   const showConnectButton = () => {
-    if (pathname.includes('/swap') || pathname === ('/')){
+    if (pathname.includes('/swap')){
       return false 
     } else{
       return <Web3Button icon="hide"/>
